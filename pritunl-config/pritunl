@@ -1,0 +1,14 @@
+/var/log/pritunl.log {
+    su root adm
+    daily
+    missingok
+    rotate 7
+    compress
+    copytruncate
+    sharedscripts
+    dateext
+    dateformat -%d%m%Y
+    postrotate
+      /home/pritunl/se_sender.sh
+    endscript
+}
